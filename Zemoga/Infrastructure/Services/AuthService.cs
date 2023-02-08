@@ -62,6 +62,7 @@ namespace Infrastructure.Services
             var claims = new[] {
                 new Claim(JwtRegisteredClaimNames.Sub, applicationUser.UserName),
                 new Claim(ClaimTypes.Name ,applicationUser.UserName),
+                new Claim(ClaimTypes.Role , "admin"),
                 new Claim(CustomClaimTypes.Uid , applicationUser.Id.ToString())
             };
 

@@ -1,5 +1,9 @@
 ﻿using Application.Features.Authors.Commands;
 using Application.Features.Authors.Queries.DTO;
+using Application.Features.Comments.Commands;
+using Application.Features.Comments.Queries.DTO;
+using Application.Features.Posts.Commands;
+using Application.Features.Posts.Queries.DTO;
 using AutoMapper;
 using Domain;
 using System;
@@ -20,6 +24,17 @@ namespace Application.Mappings
             CreateMap<UpdateAuthorCommand, Author>();
             CreateMap<DeleteAuthorCommand, Author>();
             CreateMap<Author, AuthorDTO>();
+
+            // POST
+            CreateMap<CreatePostCommand, Post>();
+            CreateMap<DeletePostCommand, Post>();
+            CreateMap<Post, PostDTO>();
+
+            // COMMENT
+            CreateMap<CreateCommentCommand, Comment>();
+            CreateMap<UpdateCommentCommand, Comment>();
+            CreateMap<DeleteCommentCommand, Comment>();
+            CreateMap<Comment, CommentDTO>();
 
         }
     }

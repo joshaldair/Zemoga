@@ -18,11 +18,4 @@
     <ProjectReference Include="..\Domain\Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\Comments\Commands\" />
-    <Folder Include="Features\Comments\Queries\" />
-    <Folder Include="Features\Posts\Commands\" />
-    <Folder Include="Features\Posts\Queries\" />
-  </ItemGroup>
-
 </Project>

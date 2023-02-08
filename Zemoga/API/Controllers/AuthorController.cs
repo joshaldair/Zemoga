@@ -19,8 +19,9 @@ public class AuthorController : Controller
 
     [HttpGet]
     [ProducesResponseType(typeof(IEnumerable<AuthorDTO>), (int)HttpStatusCode.OK)]
-    public async Task<ActionResult<IEnumerable<AuthorDTO>>> ObtenerArticulos()
+    public async Task<ActionResult<IEnumerable<AuthorDTO>>> GetAuthor()
     {
+
         var query = new GetAuthorQuery();
         var articulos = await _mediator.Send(query);
         return Ok(articulos);
@@ -29,7 +30,7 @@ public class AuthorController : Controller
 
     [HttpPost]
     [ProducesResponseType((int)HttpStatusCode.OK)]
-    public async Task<ActionResult<int>> CrearArticulo([FromBody] CreateAuthorCommand command)
+    public async Task<ActionResult<int>> CreateAiuthor([FromBody] CreateAuthorCommand command)
     {
         return await _mediator.Send(command);
     }
@@ -38,7 +39,7 @@ public class AuthorController : Controller
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult> ActualizarArticulo([FromBody] UpdateAuthorCommand command)
+    public async Task<ActionResult> UpdateAuthor([FromBody] UpdateAuthorCommand command)
     {
         await _mediator.Send(command);
         return NoContent();
@@ -49,7 +50,7 @@ public class AuthorController : Controller
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]
-    public async Task<ActionResult> BorrarArticulo(int id)
+    public async Task<ActionResult> DeleteAuthor(int id)
     {
         var command = new DeleteAuthorCommand(id);
         await _mediator.Send(command);
