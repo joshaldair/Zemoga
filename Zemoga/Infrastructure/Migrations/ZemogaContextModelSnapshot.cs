@@ -130,6 +130,12 @@ namespace Infrastructure.Migrations
                     b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsApproved")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsPending")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 

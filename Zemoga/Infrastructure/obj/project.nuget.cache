@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TjaCn1tCzNmwe0tVVrfcueLbgD471tMNsl1a+rgE43XrOVzzRHFNFyxO/4KhvPpS0K7zCQ++6FwpTT85Hj9SQQ==",
+  "dgSpecHash": "mPqxaC/uviaH0YlzKUQ8xFrYyMNKtWtJmO7ZfoJmXltt9PoRKQjnLLcJCy9e2XXstEUl8mkD/0TB5BFrwCfVng==",
   "success": true,
   "projectFilePath": "C:\\Users\\sikiu\\source\\repos\\Zemoga\\Zemoga\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -25,11 +25,13 @@
     "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.0\\microsoft.extensions.caching.memory.6.0.0.nupkg.sha512",
     "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
     "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\6.0.0\\microsoft.extensions.options.configurationextensions.6.0.0.nupkg.sha512",
     "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.identity.client\\4.21.1\\microsoft.identity.client.4.21.1.nupkg.sha512",
     "C:\\Users\\sikiu\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.8.0\\microsoft.identitymodel.jsonwebtokens.6.8.0.nupkg.sha512",

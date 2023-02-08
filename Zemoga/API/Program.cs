@@ -1,3 +1,4 @@
+using API.MiddleWare;
 using Application;
 using Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -13,6 +14,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(p => p.AddPolicy("corsapp", builder =>
+{
+    builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+}));
 
 // Adding Authentication
 builder.Services.AddAuthentication(options =>
@@ -47,6 +52,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionMiddleware>();
+
+//app cors
+app.UseCors("corsapp");
 
 app.UseAuthentication();
 app.UseAuthorization();

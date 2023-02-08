@@ -1,6 +1,8 @@
 ﻿using Application.Contracts.Identity;
+using Application.Contracts.Persistance;
 using Application.Models;
 using Infrastructure.Persistance;
+using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -17,12 +19,14 @@ namespace Infrastructure
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
         {
-            //services.Configure<JWTSettings>(configuration.GetSection("Jwt"));
+            services.Configure<JWTSettings>(configuration.GetSection("Jwt"));
 
             services.AddDbContext<ZemogaContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("ConnectionString"))
             );
 
+            services.AddScoped<IUnitOfWorkRepository, UnitOfWorkRepository>();
+            services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
             services.AddTransient<IAuthService, AuthService>();
 
             return services;

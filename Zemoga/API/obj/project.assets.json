@@ -373,6 +373,22 @@
           }
         }
       },
+      "Microsoft.Extensions.Configuration.Binder/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/6.0.0": {
         "type": "package",
         "dependencies": {
@@ -458,6 +474,26 @@
         },
         "runtime": {
           "lib/netstandard2.1/Microsoft.Extensions.Options.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options.ConfigurationExtensions/6.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Configuration.Binder": "6.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "6.0.0",
+          "Microsoft.Extensions.Options": "6.0.0",
+          "Microsoft.Extensions.Primitives": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {
             "related": ".xml"
           }
         }
@@ -643,6 +679,19 @@
           "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
           }
         }
       },
@@ -1021,7 +1070,8 @@
         "dependencies": {
           "Application": "1.0.0",
           "Microsoft.EntityFrameworkCore": "6.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "6.0.0"
         },
         "compile": {
           "bin/placeholder/Infrastructure.dll": {}
@@ -1525,6 +1575,25 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.Extensions.Configuration.Binder/6.0.0": {
+      "sha512": "b3ErKzND8LIC7o08QAVlKfaEIYEvLJbtmVbFZVBRXeu9YkKfSSzLZfR1SUfQPBIy9mKLhEtJgGYImkcMNaKE0A==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.binder/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/net461/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
+        "microsoft.extensions.configuration.binder.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "Microsoft.Extensions.DependencyInjection/6.0.0": {
       "sha512": "k6PWQMuoBDGGHOQTtyois2u4AwyVcIwL2LaSLlTZQm2CYcJ1pxbt6jfAnpWmzENA/wfrYRI/X9DTLoUkE4AsLw==",
       "type": "package",
@@ -1666,6 +1735,25 @@
         "lib/netstandard2.1/Microsoft.Extensions.Options.xml",
         "microsoft.extensions.options.6.0.0.nupkg.sha512",
         "microsoft.extensions.options.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Options.ConfigurationExtensions/6.0.0": {
+      "sha512": "bXWINbTn0vC0FYc9GaQTISbxhQLAMrvtbuvD9N6JelEaIS/Pr62wUCinrq5bf1WRBGczt1v4wDhxFtVFNcMdUQ==",
+      "type": "package",
+      "path": "microsoft.extensions.options.configurationextensions/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/net461/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "microsoft.extensions.options.configurationextensions.6.0.0.nupkg.sha512",
+        "microsoft.extensions.options.configurationextensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -1945,6 +2033,36 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Newtonsoft.Json/13.0.2": {
+      "sha512": "R2pZ3B0UjeyHShm9vG+Tu0EBb2lC8b0dFzV9gVn50ofHXh9Smjk6kTn7A/FdAsC8B5cKib1OnGYOXxRBz5XQDg==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
       ]
     },
     "Swashbuckle.AspNetCore/6.2.3": {
@@ -2536,6 +2654,7 @@
       "Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.0",
+      "Newtonsoft.Json >= 13.0.2",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -2595,6 +2714,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[6.0.0, )"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "[13.0.2, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
