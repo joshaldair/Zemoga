@@ -9,38 +9,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.Comments.Commands
+namespace Application.Features.Comments.Commands;
+
+public class DeleteCommentCommand : IRequest
 {
-    public class DeleteCommentCommand : IRequest
+    public int Id { get; set; }
+    public DeleteCommentCommand(int id)
     {
-        public int Id { get; set; }
-        public DeleteCommentCommand(int id)
+        Id = id;
+    }
+
+    public class DeleteCommentCommandHandler : IRequestHandler<DeleteCommentCommand>
+    {
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWorkRepository _unitOfWork;
+
+        public DeleteCommentCommandHandler(IMapper mapper, IUnitOfWorkRepository unitOfWork)
         {
-            Id = id;
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
         }
-
-        public class DeleteCommentCommandHandler : IRequestHandler<DeleteCommentCommand>
+        public async Task<Unit> Handle(DeleteCommentCommand request, CancellationToken cancellationToken)
         {
-            private readonly IMapper _mapper;
-            private readonly IUnitOfWorkRepository _unitOfWork;
-
-            public DeleteCommentCommandHandler(IMapper mapper, IUnitOfWorkRepository unitOfWork)
+            var response = await _unitOfWork.Repository<Comment>().GetByIdAsync(request.Id);
+            if (response == null)
             {
-                _mapper = mapper;
-                _unitOfWork = unitOfWork;
+                throw new NotFoundException(nameof(Comment), request.Id);
             }
-            public async Task<Unit> Handle(DeleteCommentCommand request, CancellationToken cancellationToken)
-            {
-                var response = await _unitOfWork.Repository<Comment>().GetByIdAsync(request.Id);
-                if (response == null)
-                {
-                    throw new NotFoundException(nameof(Comment), request.Id);
-                }
 
-                _mapper.Map(request, response);
-                await _unitOfWork.Repository<Comment>().DeleteAsync(response);
-                return Unit.Value;
-            }
+            _mapper.Map(request, response);
+            await _unitOfWork.Repository<Comment>().DeleteAsync(response);
+            return Unit.Value;
         }
     }
 }

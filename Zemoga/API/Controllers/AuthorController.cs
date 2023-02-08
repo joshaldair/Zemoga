@@ -29,6 +29,7 @@ public class AuthorController : Controller
     }
 
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     public async Task<ActionResult<int>> CreateAiuthor([FromBody] CreateAuthorCommand command)
     {
@@ -36,6 +37,7 @@ public class AuthorController : Controller
     }
 
     [HttpPut]
+    [Authorize(Roles = "Admin")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]
@@ -47,6 +49,7 @@ public class AuthorController : Controller
 
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]

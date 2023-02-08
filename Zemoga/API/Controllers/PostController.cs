@@ -4,6 +4,8 @@ using System.Net;
 using Application.Features.Posts.Commands;
 using Application.Features.Posts.Queries;
 using Application.Features.Posts.Queries.DTO;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace API.Controllers
 {
@@ -29,6 +31,7 @@ namespace API.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Writer")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<ActionResult<int>> CreatePost([FromBody] CreatePostCommand command)
         {
@@ -36,6 +39,7 @@ namespace API.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "Editor,Writer")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
@@ -46,6 +50,7 @@ namespace API.Controllers
         }
 
         [HttpPut("Approve")]
+        [Authorize(Roles = "Editor")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
@@ -57,6 +62,7 @@ namespace API.Controllers
 
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Writer")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]

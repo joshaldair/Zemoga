@@ -33,7 +33,9 @@ namespace Application.Features.Posts.Commands
                 }
                 post.IsPending = false;
                 post.IsApproved = request.IsApprove;
-                 
+                post.IsBlocked = request.IsApprove ? post.IsBlocked : true;
+
+
                 await _unitOfWork.Repository<Post>().UpdateAsync(post);
 
                 return Unit.Value;

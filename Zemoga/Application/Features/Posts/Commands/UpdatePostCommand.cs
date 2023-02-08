@@ -27,11 +27,12 @@ namespace Application.Features.Posts.Commands
             }
             public async Task<Unit> Handle(UpdatePostCommand request, CancellationToken cancellationToken)
             {
-                var post = await _unitOfWork.Repository<Post>().GetByIdAsync(request.Id);
+                var post = (await _unitOfWork.Repository<Post>().GetAsync(x => x.IsBlocked == false && x.Id == request.Id)).FirstOrDefault();
                 if (post == null)
                 {
-                    throw new NotFoundException(nameof(Post), request.Id);
+                    throw new BadRequestException(@"This post was rejected");
                 }
+
 
                 post.Title = request.Title;
                 post.Description = request.Description;
