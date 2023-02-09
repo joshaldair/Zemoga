@@ -30,7 +30,7 @@ namespace Application.Features.Posts.Queries
             }
             public async Task<List<PostDTO>> Handle(GetPostQuery request, CancellationToken cancellationToken)
             {
-                var lista = await _unitOfWork.PostRepository.GetAsync(x => x.IsActive == true);
+                var lista = await _unitOfWork.PostRepository.GetAsync(x => x.IsActive == true, includeProperties: "Comments");
                 return _mapper.Map<List<PostDTO>>(lista);
             }
         }

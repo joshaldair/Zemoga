@@ -21,6 +21,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin,Editor,Writer,Public")]
         [ProducesResponseType(typeof(IEnumerable<PostDTO>), (int)HttpStatusCode.OK)]
         public async Task<ActionResult<IEnumerable<PostDTO>>> GetPost()
         {

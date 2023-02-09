@@ -18,6 +18,7 @@ public class AuthorController : Controller
 	}
 
     [HttpGet]
+    [Authorize(Roles = "Admin,Editor,Writer,Public")]
     [ProducesResponseType(typeof(IEnumerable<AuthorDTO>), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<IEnumerable<AuthorDTO>>> GetAuthor()
     {

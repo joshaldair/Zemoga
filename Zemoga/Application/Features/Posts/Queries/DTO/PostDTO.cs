@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Application.Features.Comments.Queries.DTO;
+using Domain;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +15,6 @@ namespace Application.Features.Posts.Queries.DTO
         public string Title { get; set; }
         public bool IsPending { get; set; }
         public bool IsApproved { get; set; }
+        public List<CommentDTO> Comments { get; set; }
     }
 }

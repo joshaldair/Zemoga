@@ -9,13 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{E2B914B8-7F1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{CA203968-31B7-4539-ABA9-F0D6D502FF62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{FCA3E796-F2E6-4648-8777-0138C26933CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{FCA3E796-F2E6-4648-8777-0138C26933CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{366156E5-6245-4D2F-8811-DADB2C0A3A70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{366156E5-6245-4D2F-8811-DADB2C0A3A70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{6AB308CC-9309-4463-82F7-266F811AB71F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{6AB308CC-9309-4463-82F7-266F811AB71F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{1880FF4F-3893-4FFF-AB7C-FFB5B3324D69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{1880FF4F-3893-4FFF-AB7C-FFB5B3324D69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{7634E602-A8AF-4840-8EEB-0EEE2488C711}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1880FF4F-3893-4FFF-AB7C-FFB5B3324D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1880FF4F-3893-4FFF-AB7C-FFB5B3324D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1880FF4F-3893-4FFF-AB7C-FFB5B3324D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7634E602-A8AF-4840-8EEB-0EEE2488C711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7634E602-A8AF-4840-8EEB-0EEE2488C711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7634E602-A8AF-4840-8EEB-0EEE2488C711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7634E602-A8AF-4840-8EEB-0EEE2488C711}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

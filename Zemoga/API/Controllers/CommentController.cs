@@ -4,6 +4,8 @@ using System.Net;
 using Application.Features.Comments.Queries.DTO;
 using Application.Features.Comments.Queries;
 using Application.Features.Comments.Commands;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace API.Controllers;
 
@@ -18,6 +20,7 @@ public class CommentController : Controller
     }
 
     [HttpGet]
+    [Authorize(Roles = "Admin,Editor,Writer,Public")]
     [ProducesResponseType(typeof(IEnumerable<CommentDTO>), (int)HttpStatusCode.OK)]
     public async Task<ActionResult<IEnumerable<CommentDTO>>> GetPost()
     {
@@ -29,6 +32,7 @@ public class CommentController : Controller
 
 
     [HttpPost]
+    [Authorize(Roles = "Admin,Editor,Writer,Public")]
     [ProducesResponseType((int)HttpStatusCode.OK)]
     public async Task<ActionResult<int>> CreateComment([FromBody] CreateCommentCommand command)
     {
@@ -36,6 +40,7 @@ public class CommentController : Controller
     }
 
     [HttpPut]
+    [Authorize(Roles = "Admin,Editor,Writer,Public")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]
@@ -47,6 +52,7 @@ public class CommentController : Controller
 
 
     [HttpDelete("{id}")]
+    [Authorize(Roles = "Admin,Editor,Writer,Public")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesDefaultResponseType]

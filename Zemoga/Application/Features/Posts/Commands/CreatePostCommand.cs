@@ -10,16 +10,15 @@ namespace Application.Features.Posts.Commands
 {
     public class CreatePostCommand : IRequest<int>
     {
-        public int Id { get; set; }
         public int AuthorId { get; set; }
         public string Description { get; set; }
         public string Title { get; set; }
 
-        public class CreatePostCommandHanlder : IRequestHandler<CreatePostCommand, int>
+        public class CreatePostCommandHandler : IRequestHandler<CreatePostCommand, int>
         {
             private readonly IUnitOfWorkRepository _unitOfWork;
             private readonly IMapper _mapper;
-            public CreatePostCommandHanlder(IUnitOfWorkRepository unitOfWork, IMapper mapper)
+            public CreatePostCommandHandler(IUnitOfWorkRepository unitOfWork, IMapper mapper)
             {
                 _unitOfWork = unitOfWork;
                 _mapper = mapper;

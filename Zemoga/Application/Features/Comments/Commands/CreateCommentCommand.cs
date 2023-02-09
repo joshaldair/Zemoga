@@ -15,7 +15,6 @@ namespace Application.Features.Comments.Commands;
 
 public class CreateCommentCommand : IRequest<int>
 {
-    public int Id { get; set; }
     public string Description { get; set; }
     public int PostId { get; set; }
     public int UserId { get; set; }
